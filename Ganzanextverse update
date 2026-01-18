@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganzanextverse</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f8f8;
+    }
+    header {
+      background: #004225;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .container {
+      display: flex;
+      padding: 20px;
+    }
+    aside {
+      width: 20%;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+    main {
+      flex: 1;
+    }
+    .product-card {
+      background: white;
+      border-radius: 10px;
+      border-color:green;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .product-card img {
+      width: 200px;
+      margin-right: 40px;
+      border-radius: 400px;
+    }
+    .product-info {
+      flex: 1;
+    }
+    .price {
+      font-size: 1.2em;
+      color: #007a33;
+      margin-top: 10px;
+    }
+    button {
+      background: #00ff00;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #004225;
+    }
+    h2{
+      color:rgb(6, 82, 6);;
+    }
+    div.container{
+border:10px solid green;
+    }
+    div.product-card{
+      border:5px solid green;
+    }
+    .highlight{
+      border:5px solid green;
+    }
+  </style>
+  
+</head>
+<body>
+<header>
+  <h1>GANZAnextverse</h1>
+<button>
+  <a href="1.html" style="padding:8px; border-radius:5px; border:1px solid #ccc;">Log in</a> 
+</button>
+</header>
+
+<div class="container">
+    <aside class="highlight">
+    <h2>Division</h2>
+    <label><input type="checkbox">Introduction</label><br>
+    <label><input type="checkbox">Explanation</label><br>
+    <label><input type="checkbox">Exercises</label><br>
+  </aside>
+  <main>
+    <div class="product-card">
+      <img src="Screenshot_2025-10-15_103001.png" alt="My screenshot" width="400">
+      <div class="product-info">
+        <h2>Python as programming language</h2>
+        <p>Python is a programming language which is high leveled, interpreted, and general purpose programming language known for its simplicity, readability, and versatility.In addition it was created by Guido van Rossum and first released in 1991 </p>
+        <button><a href="PYTHON.html">Add to see more</a></button>
+      </div>
+      
+    </div>
+
+    <div class="product-card">
+      <img src="Screenshot_2025-10-16_081216.png" alt="My Python" width="400">
+      <div class="product-info">
+        <h2>Disadvantages of python</h2>
+        <ol>
+        <li>Slower than compiled languages</li>
+        <li>Higher memory usage</li>
+        <li>Not ideal for mobile app development</li>
+      <li>Global Interpeter lock(GIL)</li>   
+    </ol>
+        <button><a href="all.html">Add to see more</a></button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="Screenshot_2025-10-30_140508.png" alt="My pyt" width="400">
+       <div class="product-info">
+        <h2>Advantages of python</h2>
+        <ol>
+          <li>Simplicity and Readability.</li>
+          <li>Versatility and Wide Applicability.</li>
+          <li>Extensive Libraries and Framework.</li>
+          <li>Rapid Development and Prototyping.</li>
+          <li>Cross-Platform Compatibility.</li>
+          <li>Strong Community Support.</li>
+          <li>Integration Capabilities. </li>
+          <li>Open-Source and free.</li>
+          <li>Support for Multiple Programming Paradigms:</li>
+        </ol>
+        <button><a href="lg.html">Add see more</a></button>
+        </div>
+       </div>
+      </div>
+  </main>
+  <script>
+//🥇👌 Hover effect on product cards (zoom slightly)👌🥇
+const cards = document.querySelectorAll(".product-card");
+
+cards.forEach(card => {
+    card.addEventListener("mouseenter", () => {
+        card.style.transform = "scale(1.05)";
+        card.style.transition = "0.3s";
+        card.style.boxShadow = "0 5px 15px rgba(0,0,0,0.3)";
+    });
+    card.addEventListener("mouseleave", () => {
+        card.style.transform = "scale(1)";
+        card.style.boxShadow = "0 2px 5px rgba(0,0,0,0.1)";
+    });
+});
+
+// 🥈👌Click "Add to see more" buttons to highlight card👌🥈
+const buttons = document.querySelectorAll(".product-card button");
+
+buttons.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault(); // prevent default link behavior
+        const card = btn.closest(".product-card");
+        card.style.border = "5px solid red";
+        card.style.backgroundColor = "#e0ffe0"; // slight green highlight
+        alert("You clicked Add to see more!");
+    });
+});
+
+// 🥉👌Count checked boxes in the sidebar👌🥉
+const checkboxes = document.querySelectorAll("aside input[type=checkbox]");
+
+checkboxes.forEach(cb => {
+    cb.addEventListener("change", () => {
+        const checkedCount = document.querySelectorAll("aside input[type=checkbox]:checked").length;
+        console.log(`Sections selected: ${checkedCount}`);
+    });
+});
+
+// 4️⃣👌Toggle product info text on button click👌4️⃣
+cards.forEach(card => {
+    const btn = card.querySelector("button");
+    const info = card.querySelector(".product-info p, .product-info ol");
+    
+    btn.addEventListener("click", () => {
+        if(info.style.display === "none"){
+            info.style.display = "block";
+        } else {
+            info.style.display = "none";
+        }
+    });
+});
+</script>
+
+</body>
+</html>
