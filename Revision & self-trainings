@@ -1,4 +1,4 @@
-// These are the JavaSscript codes that make changes to some texts
+//👌🥇 These are the JavaSscript codes that make changes to some texts🥇 👌
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,5 +32,20 @@
            parentDiv.insertBefore(newSchoolP,greenHills)
         }
     </script>
+</body>
+</html>
+//👌🥈Trying to be familiar🥈👌
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hellow👋</h1>
+    <p id="demo">JavaScipt can change HTML content.</p>
+    <button type="button" onclick='document.getElementById("demo").innerHTML = "Bonne etude!"'>Click here</button>
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
 </body>
 </html>
